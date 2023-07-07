@@ -8,7 +8,7 @@ A User-friendly invoice app in which you can create, edit, manage, and send invo
 - Firebase
 - SCSS
 
-Note: The app is built manually using webpack & babel which can be configured webpack.config.js and .babelrc in the root folder.
+Note: The app is built manually using **webpack & babel** which can be configured webpack.config.js and .babelrc in the root folder.
 
 How to run the App?
 
