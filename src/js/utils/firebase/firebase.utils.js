@@ -20,6 +20,8 @@ import {
   addDoc,
 } from "firebase/firestore";
 
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyD5XJxHH6uKcYKgHYGf5WRAmYt244eEGdc",
   authDomain: "homoeo-amigo-assignment.firebaseapp.com",
@@ -30,12 +32,14 @@ const firebaseConfig = {
   appId: "1:341033549646:web:9a6b87aecd5bfd1a2c281f",
 };
 
-
+// firestore instance
 const firebaseApp = initializeApp(firebaseConfig);
 export const db = getFirestore(firebaseApp);
 
+// collection instance
 const invoicesCollectionRef = collection(db, "invoices");
 
+// Auth service instance
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
   prompt: "select_account",
@@ -44,6 +48,8 @@ provider.setCustomParameters({
 export const auth = getAuth();
 
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+
+
 
 export const createUserDocumentFromAuth = async (
   userAuth,
@@ -90,6 +96,8 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   return await signInWithEmailAndPassword(auth, email, password);
 };
 
+
+// Storing and Updating Invoices
 
 export const getInvoices = async (userId) => {
   const invoicesCol = collection(db, "invoices");
